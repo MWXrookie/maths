@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dify Chat App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f4f4f9;
+    }
+    .chatbox {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbox">
+    <h1>Dify Chat App</h1>
+    <p>请输入您的问题：</p>
+    <input type="text" id="userInput" />
+    <button onclick="sendMessage()">发送</button>
+    <div id="response" style="margin-top: 20px;">
+      <!-- 聊天结果将显示在这里 -->
+    </div>
+  </div>
+  <script>
+    function sendMessage() {
+      const userInput = document.getElementById("userInput").value;
+      const responseDiv = document.getElementById("response");
+      responseDiv.innerHTML = `<p><strong>你：</strong> ${userInput}</p><p><strong>AI：</strong> 模拟的回复内容（此处接入Dify API处理）</p>`;
+    }
+  </script>
+</body>
+</html>
